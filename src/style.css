@@ -1,4 +1,48 @@
-/* src/css/loader.css */
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+a{
+  color: white;
+  list-style: none;
+
+}
+
+/* Layout sections */
+header {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+footer {
+  background-color: #eee;
+  color: #555;
+  padding: 1rem;
+  text-align: center;
+}
 
 .loader {
   position: fixed;
