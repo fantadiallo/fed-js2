@@ -32,7 +32,7 @@ export default async function router(pathname = window.location.pathname){
             
                     case "/NotFound/":
                     case "/NotFound/index.html":
-                        await import("./views/NotFoundView.js");
+                        await import("./views/NotFound.js");
                         break;
                 }
             }

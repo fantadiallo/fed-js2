@@ -1,6 +1,6 @@
 import { ACCESS_TOKEN_KEY } from "./constans";
 import * as storage from "./key";
-save
+
 /**
  * Checks if the user is authenticated and the session is still valid.
  * If valid, executes a callback; otherwise, redirects to login.
