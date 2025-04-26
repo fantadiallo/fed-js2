@@ -17,6 +17,50 @@
             </div>
         </nav>
        </header>
+
+
+       <main class="container profile-page">
+        <h1 class="text-center">My Profile</h1>
+      
+        <!-- Profile Info -->
+        <section class="profile-section">
+          <h2>User</h2>
+          <div id="profile-Container" aria-live="polite"></div>
+        </section>
+      
+        <!-- Posts Section -->
+        <section class="posts-section">
+          <h2>My Posts</h2>
+          <div id="myPosts" class="posts-grid"></div>
+        </section>
+      
+        <!-- Edit Post Modal -->
+        <div id="editPostModal" class="modal hidden">
+            <form id="edit-post-form" class="modal-content">
+              <h3>Edit Post</h3>
+          
+              <!-- ✅ Success Message -->
+              <div id="successMessage" class="success-message hidden">
+                ✅ Post updated successfully!
+              </div>
+          
+              <!-- Form Fields -->
+              <input type="hidden" id="post-id" />
+              <input type="text" id="post-title" name="title" placeholder="Title" required />
+              <textarea id="post-body" name="body" placeholder="Body" rows="4"></textarea>
+              <input type="text" id="tags" name="tags" placeholder="Tags (comma-separated)" />
+              <input type="url" id="image-url" name="media-url" placeholder="Image URL" />
+              <input type="text" id="image-alt" name="media-alt" placeholder="Image alt text" />
+          
+              <div class="modal-actions">
+                <button type="button" id="closeEditModal">Cancel</button>
+                <button type="submit">Save Changes</button>
+              </div>
+            </form>
+          </div>
+          
+      </main>
+      
     <footer>
         <p>&copy; 2025 My Website. All rights reserved.</p>
       </footer>

@@ -1,15 +1,13 @@
-import { API_BASE, API_BASE } from "../storage/constans";
-import { headers } from "../storage/headers";
 
+import { API_SOCIAL } from "../storage/constans.js";
+import { headers } from "../storage/headers.js";
 
 export default class SocialApi {
-    constructor(API_BASE = API_BASE){
-        this.apiBase = this.apiBase;
-        this.apiEndpoint = `${this.apiBase}/socials`;
-    }
+  constructor() {
+    this.apiEndpoint = API_SOCIAL;
+  }
 
-
-async fetchData(endpoint, method = "GET", body = null) {
+  async fetchData(endpoint, method = "GET", body = null) {
     try {
       const response = await fetch(endpoint, {
         method,
@@ -23,17 +21,47 @@ async fetchData(endpoint, method = "GET", body = null) {
         throw new Error(`Failed to ${method}: ${response.statusText}`);
       }
     } catch (error) {
-      console.error("Pets API error:", error);
+      console.error("Social API error:", error);
       throw error;
     }
   }
 
-  async getAllSocials(){
-    const res = await this.fetchData(this.apiEndpoint);
+  async getAllPosts(query = "") {
+    const res = await this.fetchData(`${this.apiEndpoint}${query}`);
     return res.data;
   }
 
-  
-  
-}
+  async getPostById(id, include = "") {
+    const params = include ? `?${include}` : "";
+    const res = await this.fetchData(`${this.apiEndpoint}/${id}${params}`);
+    return res.data;
+  }
 
+  async createPost(data) {
+    const res = await this.fetchData(this.apiEndpoint, "POST", data);
+    return res.data;
+  }
+
+  async updatePost(id, data) {
+    const res = await this.fetchData(`${this.apiEndpoint}/${id}`, "PUT", data);
+    return res.data;
+  }
+
+  async deletePost(id) {
+    return await this.fetchData(`${this.apiEndpoint}/${id}`, "DELETE");
+  }
+
+  async reactToPost(id, symbol) {
+    const res = await this.fetchData(`${this.apiEndpoint}/${id}/react/${symbol}`, "PUT");
+    return res.data;
+  }
+
+  async commentOnPost(id, commentData) {
+    const res = await this.fetchData(`${this.apiEndpoint}/${id}/comment`, "POST", commentData);
+    return res.data;
+  }
+
+  async deleteComment(postId, commentId) {
+    return await this.fetchData(`${this.apiEndpoint}/${postId}/comment/${commentId}`, "DELETE");
+  }
+}

@@ -1,5 +1,6 @@
 import AuthAPI from "../../api/auth";
 
+
 const api = new AuthAPI();
 
 export async function onLogin(e) {
@@ -27,7 +28,7 @@ export async function onLogin(e) {
       console.log("Login successful:", response);
       form.reset();
       alert(`Login successful for ${response.name}`);
-      window.location.href = "/profile/";
+      window.location.href = "/profile/index.html";
     } else {
       throw new Error("Invalid login response. Please try again.");
     }

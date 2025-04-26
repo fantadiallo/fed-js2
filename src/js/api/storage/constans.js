@@ -13,14 +13,11 @@ export const API_AUTH = `${API_BASE}/auth`;
 export const API_AUTH_LOGIN = `${API_AUTH}/login`;
 export const API_AUTH_REGISTER = `${API_AUTH}/register`;
 
-// Pets endpoints
-export const API_PETS = `${API_BASE}/socials`;
+export const API_SOCIAL = `${API_BASE}/social/posts`;   // ✅ posts!
+export const API_PROFILES = `${API_BASE}/social/profiles`; // ✅ profiles!
 
 
-// Profiles endpoints
-export const API_PROFILES = `${API_BASE}/profiles`;
 
-// URL params (used in views like pet detail or edit)
 export const params = new URLSearchParams(window.location.search);
 
 // Route paths

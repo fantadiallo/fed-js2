@@ -1,7 +1,7 @@
 
-import SocialApi from "../../api/socialApi";
-import { ROUTES } from "../../api/storage/constans";
-import { load } from "../../api/storage/key";
+import SocialApi from "../../api/socialApi.js";
+import { ROUTES } from "../../api/storage/constans.js";
+import { load } from "../../api/storage/key.js";
 
 const socialApi = new SocialApi();
 const user = load("user");

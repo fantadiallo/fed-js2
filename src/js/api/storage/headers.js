@@ -1,5 +1,5 @@
-import { ACCESS_TOKEN_KEY } from "./constans";
-
+import { ACCESS_TOKEN_KEY, API_KEY } from "./constans";
+import * as storage from "./key";
 
 /**
  * Constructs the headers for authenticated API requests.
@@ -8,6 +8,7 @@ import { ACCESS_TOKEN_KEY } from "./constans";
  * @returns {Headers} A Headers object containing necessary request headers.
  */
 export function headers() {
+
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
   
